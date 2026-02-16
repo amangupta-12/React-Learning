@@ -1,0 +1,107 @@
+Why we use React -> React is a robust advanced language . 
+In javascript if the user wants to change any data in the web than the js reload(render) the whole website .
+So due to this it takes time to load the page. And even if we have to do small changes it takes lots of time .
+Therfore facebook introduced REACT which is efficient . 
+
+React consist -> 1. React libraries 2. React DOM
+
+if we have to do somethind in the website than we have to give the data to react and react will do the work with the help 
+of virtual DOM. The DOM only change the required part without touching the correct part . due to which the website run fast.
+
+JSX -> means we can write javascript and html in one file . in javascript if we have to write the code of html then we use to do like this ${} and in this 
+curly brases we was wrote the code. 
+
+In React we have to give command to React and he will do the job 
+
+   
+    Here we are trying to change the variable name and print it to the page 
+    the changes is done in the console but in the page nothing is visible 
+    Because, if we have to do any work we have to give command to react 
+const App = () => {
+  let a = "Aryan";
+
+  const ab = () =>{
+      a = "Aman";
+      console.log("Hello from {a}");
+  }
+
+  return (
+    <div>
+      <h1>Hello from {a}</h1>
+      <button onClick={ab}>Click</button>
+    </div>
+)}
+
+So to do this we need to use HOOKS 
+1. useState
+
+Here we did it using useState function
+
+ const [num,setNum] = useState(0);  setNum -> we give commmand to react to set the var to the following number 
+  return (
+    <div>
+      <h3>Number is {num}</h3>
+      <button onClick={() => setNum(num + 10)}>Increment</button>
+<button onClick={() => setNum(num - 10)}>Decrement</button>
+
+    </div>
+  )
+
+CHAP 01 BASICS
+
+DIFFERENCE BETWEEN LIBRARY AND FRAMEWORK 
+
+Library means here you can do seperate work using a single library. 
+A Library GSAP use to make animation 
+A Library React use to make the UI 
+
+Framework means a structure where all parts of the website includes.
+
+Library = you call it. Framework = it calls you.
+
+Example of both -> IF you have to create a house 
+Then in Library -> you can customize according to you, you have freedom to do it. 
+In Framework -> it becomes like you are in a flat,where you can do small changes to customize your room.
+
+
+DIFFERENCE BETWEEN REAL DOM AND VIRTUAL DOM 
+
+The Real DOM is the actual webpage structure in the browser. When something changes, the browser updates it directly, which can be slow because it may re-render large parts of the page.
+
+The Virtual DOM, used by React, is a lightweight copy of the Real DOM. React first updates this copy, compares the changes, and then updates only the necessary parts in the Real DOM, making it faster and more efficient.
+
+Real DOM updates the whole structure slowly. Virtual DOM updates only the changed part efficiently.
+
+
+CHAP 02 BASIC PART 02
+
+In a function, we can return only one thing 
+Here we return hello, we cannot write another thing in this, so to solve this we use div 
+function app() {
+  return 'hello';
+}
+
+function app() {
+  return <div> <h1> hello <h1\>
+                <h2> Welcome <h2\>
+                <div\>
+}
+so we can use like this 
+
+IF we have to return 2 div in a function,so we will create a div and place both the div that we have to return 
+function app() {
+  return <div>
+         <div> <h1> hello <h1\><div\>
+         <div> <h1> welcome<h1\><div\>
+         <div\>
+}
+
+    FRAGEMENTS
+but in the console the extra div is visible and this is not the optimal way so we introduce FRAGEMENTS
+<><\>   <- This is a fragment so we can use it inplace of div
+          <>
+         <div> <h1> hello <h1\><div\>
+         <div> <h1> welcome<h1\><div\>
+         <\>
+
+
